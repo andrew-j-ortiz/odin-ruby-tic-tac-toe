@@ -5,7 +5,7 @@
 2. player
 3. logic
 
-## logic definitions
+## logic logic/methods 
 1. create_players(): 
 Takes inputs to assign player names; if left blank, default to "player 1" and "player 2". Player 1 will always be "X" and player 2 will always be "O".
 2. play_round(): 
@@ -16,8 +16,6 @@ display board
 check if game ended, if it did, stop running this def, if it did not , run this def again
 3. game_end():
 Checks if the game ended. This will be true if either a player won, or there was a tie.
-4. display_board():
-displays the board in its current state
 
 ## logic pseudocode
 1. create two players
