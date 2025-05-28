@@ -7,7 +7,11 @@ def main
 
   loop do
     if tic_tac_toe.game_ended
-      puts 'Game Over!'
+      if tic_tac_toe.check_for_draw
+        puts "Game over! It's a draw..."
+      else
+        puts "Game over! #{tic_tac_toe.who_won?} wins!"
+      end
       break
     end
     tic_tac_toe.play_round

@@ -11,7 +11,6 @@ class Game
     puts '---------------'
     puts '  TIC TAC TOE  '
     puts '---------------'
-    puts
   end
 
   def switch_turn
@@ -34,6 +33,7 @@ class Game
   end
 
   def prompt_player_name
+    puts
     puts "Enter a name for player #{@turn.zero? ? 'one' : 'two'}"
     print '>'
     @player_name = gets.chomp
@@ -44,7 +44,6 @@ class Game
   def prompt_player_move # rubocop:disable Metrics/MethodLength
     puts "Your turn #{@current_player.name}! Where would you like to place your piece?"
     display_board
-    puts 'Enter row and column numbers separated by a comma (e.g., 0,2)'
     loop do
       print '>'
       @player_input = gets.chomp
@@ -65,6 +64,7 @@ class Game
     prompt_player_name
     switch_turn
     prompt_player_name
+    puts
     puts "Player one, your name is #{@player_one.name} and your piece is #{@player_one.piece}!"
     puts "Player two, your name is #{@player_two.name} and your piece is #{@player_two.piece}!"
     puts
@@ -111,6 +111,10 @@ class Game
     end
 
     false
+  end
+
+  def who_won?
+    @turn.zero? ? @player_one.name : @player_two.name
   end
 
   def play_round
